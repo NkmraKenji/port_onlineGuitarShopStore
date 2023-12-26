@@ -1,0 +1,491 @@
+var mySwiper = new Swiper('#swiper_main .swiper-container', {
+	loop: true,
+	autoplay: 5000,
+	speed: 1000,
+	slidesPerView: 1,
+	spaceBetween: 0,
+	centeredSlides: true,
+	paginationClickable: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	effect: 'slide',
+	breakpoints: {
+		767: {
+			slidesPerView: 1,
+			spaceBetween: 0
+		}
+	}
+});
+
+var mySwiper = new Swiper('.swiper_academy .swiper-container', {
+	loop: true,
+	autoplay: 3000,
+	speed: 600,
+	slidesPerView: 1,
+	spaceBetween: 0,
+	centeredSlides: true,
+	paginationClickable: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	effect: 'slide',
+	breakpoints: {
+		767: {
+			slidesPerView: 1,
+			spaceBetween: 0
+		}
+	}
+});
+
+
+var swiper_slider = new Swiper('.swiper_slider', {
+	loop: true,
+	autoplay: 3000,
+	slidesPerView: 1,
+	spaceBetween: 10,
+	centeredSlides: true,
+	paginationClickable: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	effect: 'slide',
+	breakpoints: {
+		767: {
+			slidesPerView: 1,
+			spaceBetween: 0
+		}
+	}
+});
+
+var mySwiper = new Swiper('.swiper-container2', {
+	loop: true,
+	slidesPerView: 2,
+	spaceBetween: 10,
+	centeredSlides: true,
+	paginationClickable: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	breakpoints: {
+		767: {
+			slidesPerView: 2,
+			spaceBetween: 0
+		}
+	}
+});
+
+
+/*swiper_brands */
+var swiper = new Swiper('#swiper_brands .swiper-container', {
+	loop: true,
+	pagination: '.swiper-pagination',
+	autoplay: 3000,
+	slidesPerView: 5,
+	spaceBetween: 1,
+	paginationClickable: true,
+	keyboardControl: true,
+	mousewheelControl: false,
+	preventClicks: false,
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+
+	breakpoints: {
+		1500: {
+			slidesPerView: 4,
+			spaceBetween: 1,
+		},
+		1200: {
+			slidesPerView: 4,
+			spaceBetween: 1,
+		},
+		960: {
+			slidesPerView: 3,
+			spaceBetween: 1,
+		},
+
+		767: {
+			slidesPerView: 2,
+			spaceBetween: 1,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+
+
+	}
+});
+/*swiper_products */
+var swiper = new Swiper('#swiper_products .swiper-container', {
+	autoplay: 3000,
+	slidesPerView: 4,
+	spaceBetween: 10,
+	roundLengths: true,
+	loop: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+
+	breakpoints: {
+		1500: {
+			slidesPerView: 4,
+		},
+		1200: {
+			slidesPerView: 4,
+		},
+		960: {
+			slidesPerView: 3,
+		},
+
+		767: {
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+	}
+});
+
+/*swiper_blog */
+var swiper = new Swiper('#swiper_blog .swiper-container', {
+	autoplay: 3000,
+	slidesPerView: 5,
+	spaceBetween: 5,
+	loop: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+
+	breakpoints: {
+		1500: {
+			slidesPerView: 4,
+		},
+		1200: {
+			slidesPerView: 4,
+		},
+		960: {
+			slidesPerView: 3,
+		},
+
+		767: {
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+	}
+});
+
+
+/*swiper_new-products */
+var swiper = new Swiper('#swiper_new-products .swiper-container', {
+	autoplay: 3000,
+	slidesPerView: 5,
+	spaceBetween: 5,
+	loop: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+
+	breakpoints: {
+		1500: {
+			slidesPerView: 4,
+		},
+		1200: {
+			slidesPerView: 4,
+		},
+		960: {
+			slidesPerView: 3,
+		},
+
+		767: {
+			slidesPerView: 2,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+	}
+});
+
+/*swiper_parts */
+var swiper = new Swiper('#swiper_parts .swiper-container', {
+	autoplay: 3000,
+	slidesPerView: 5,
+	spaceBetween: 5,
+	autoHeight: true,
+	loop: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+
+	breakpoints: {
+		1200: {
+			slidesPerView: 4,
+			spaceBetween: 0,
+		},
+		960: {
+			slidesPerView: 3,
+			spaceBetween: 0,
+		},
+		640: {
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+	}
+});
+/*swiper_brand_artist */
+var swiper = new Swiper('#swiper_brand_artist .swiper-container', {
+
+	autoplay: 3000,
+	slidesPerView: 7,
+	spaceBetween: 0,
+	loop: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+
+	breakpoints: {
+		1500: {
+			slidesPerView: 6,
+		},
+		1200: {
+			slidesPerView: 5,
+		},
+		960: {
+			slidesPerView: 4,
+		},
+
+		767: {
+			slidesPerView: 3,
+			spaceBetween: 0,
+		},
+		480: {
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+	}
+});
+/*swiper_artists_abc */
+var swiper = new Swiper('.swiper_artists_abc .swiper-container', {
+	autoplay: 4000,
+	slidesPerView: 6,
+	loop: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	fadeEffect: {
+		crossFade: true
+	},
+	breakpoints: {
+		1200: {
+			slidesPerView: 4,
+		},
+		960: {
+			slidesPerView: 3,
+		},
+
+		767: {
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+
+	}
+});
+
+
+/*swiper_artists_abc */
+var swiper = new Swiper('.swiper_artists_abc_2 .swiper-container', {
+	autoplay: 6000,
+	slidesPerView: 6,
+	loop: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	breakpoints: {
+		1200: {
+			slidesPerView: 4,
+		},
+		960: {
+			slidesPerView: 3,
+		},
+
+		767: {
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+
+	}
+});
+
+/*swiper_shops */
+var swiper = new Swiper('#swiper_shops .swiper-container', {
+	autoplay: 5000,
+	slidesPerView: 5,
+	spaceBetween: 5,
+	loop: true,
+	centeredSlides: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+
+	breakpoints: {
+		1500: {
+			slidesPerView: 5,
+		},
+		1200: {
+			slidesPerView: 4,
+		},
+		960: {
+			slidesPerView: 3,
+		},
+
+		767: {
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+	}
+});
+
+
+/*swiper_shops */
+var swiper = new Swiper('#swiper_video .swiper-container', {
+	autoplay: 5000,
+	slidesPerView: 1,
+	spaceBetween: 5,
+	centeredSlides: true,
+	loop: true,
+	pagination: '.swiper-pagination',
+	paginationClickable: true,
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	breakpoints: {
+		1500: {
+			slidesPerView: 1,
+		},
+		1200: {
+			slidesPerView: 1,
+		},
+		960: {
+			slidesPerView: 1,
+		},
+
+		767: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+	}
+	//   autoplay: 5000,
+	//   slidesPerView: 4,
+	//   spaceBetween: 5,
+	//   centeredSlides: true,
+	//   loop: true,
+	//   pagination: '.swiper-pagination',
+	//   paginationClickable: true,
+	//   nextButton: '.swiper-button-next',
+	//   prevButton: '.swiper-button-prev',
+	//   breakpoints: {
+	//    1500: {
+	//      slidesPerView: 4,
+	//    },
+	//    1200: {
+	//      slidesPerView: 3,
+	//    },
+	//    960: {
+	//      slidesPerView: 2,
+	//    },
+
+	//    767: {
+	//     slidesPerView: 1,
+	//     spaceBetween: 0,
+	//   },
+	//   480: {
+	//     slidesPerView: 1,
+	//     spaceBetween: 0,
+	//   },
+	// }
+});
+
+/*swiper_new_products */
+var swiper = new Swiper('.swiper_new_products .swiper-container', {
+
+	autoplay: 5000,
+	slidesPerView: 5,
+	spaceBetween: 5,
+	loop: true,
+	pagination: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+
+	breakpoints: {
+		1500: {
+			slidesPerView: 5,
+		},
+		1200: {
+			slidesPerView: 4,
+		},
+		960: {
+			slidesPerView: 3,
+		},
+
+		767: {
+			slidesPerView: 2,
+			spaceBetween: 0,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+		},
+	}
+});
+
+/*swiper_header_products */
+var swiper = new Swiper('#swiper_header_products .swiper-container', {
+	fadeEffect: {
+		crossFade: true
+	},
+	direction: 'vertical',
+	autoplay: 4000,
+	speed: 800,
+	slidesPerView: 1,
+	spaceBetween: 30,
+	loop: true,
+	breakpoints: {
+
+	}
+});
+
+
+var swiper = new Swiper('#swiper_hero .swiper-container_hero', {
+	effect: 'fade',
+	direction: 'horizontal',
+	autoplay: 4000,
+	speed: 800,
+	slidesPerView: 1,
+	spaceBetween: 30,
+	loop: true,
+	breakpoints: {
+
+	}
+});

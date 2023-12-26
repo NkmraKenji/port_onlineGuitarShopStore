@@ -1,0 +1,638 @@
+(function ($) {
+  /*ここから*/
+  //gallery-icon
+  $(function () {
+    $(".gallery-icon a").append(
+      '<div class="icn_btn"><i class="fas fa-plus fa-sm"></i></div>'
+    );
+  });
+
+  //local_nav fixed
+  $(function () {
+    $(".tab>li")
+      .click(function () {
+        const num = $(this).parent().children("li").index(this);
+        $(".tab").each(function () {
+          $(">li", this).removeClass("active").eq(num).addClass("active");
+        });
+        $(".tab_item").hide().eq(num).show();
+      })
+      .first()
+      .click();
+    $(".tab_bottom>li").click(function () {
+      const speed = 500;
+      const href = $(this).attr("data-top");
+      const target = $(href == "#" || href == "" ? "html" : href);
+      const position = target.offset().top;
+      $("body,html").animate({ scrollTop: position }, speed, "swing");
+      return false;
+    });
+  });
+
+  //=====================================================
+  //vari_actives
+  $(function () {
+    const full_path = location.href.split("#")[0];
+    $("#js_position_vari li a").each(function () {
+      const $this = $(this);
+      if ($this.prop("href").split("#")[0] == full_path) {
+        $this.addClass("vari_active");
+      }
+    });
+  });
+  $(function () {
+    $("#js_position_vari li a.vari_active")
+      .css("pointer-events", "none")
+      .removeClass("icon_right_after")
+      .attr("tabindex", -1);
+  });
+  //=====================================================
+  //footer accordion
+  $(function () {
+    $(".footer_accordion> .parent").on("click", function () {
+      $(this).children("ul").slideToggle();
+    });
+  });
+
+  //====================================================
+  // guitar&base Parts local menu
+  $(function () {
+    var _width = $(window).width();
+    if (_width <= 991) {
+      $("#local_menu_toggle").css("display", "block");
+      $(".local_menu_box").css("display", "none");
+      $("#local_menu_toggle").click(function () {
+        $(".local_menu_box").slideToggle();
+      });
+    } else {
+      $("#local_menu_toggle").css("display", "none");
+    }
+  });
+
+  //====================================================
+  // support local nav
+  $(function () {
+    var _width = $(window).width();
+    if (_width <= 960) {
+      $("#local_nav_toggle").css("display", "block");
+      $(".local_nav_list").css("display", "none");
+      $("#local_nav_toggle").click(function () {
+        $(".local_nav_list").slideToggle();
+      });
+    } else {
+      $("#local_nav_toggle").css("display", "none");
+    }
+  });
+
+  //====================================================
+  //シグネチャシリーズ メニュー
+  $(function () {
+    $(".ac_body").find(".ac_content").hide();
+    // Accordion
+    $(".ac_body")
+      .find(".ac_header")
+      .click(function () {
+        var next = $(this).next();
+        next.slideToggle("fast");
+        $(".ac_content").not(next).slideUp("fast");
+        return false;
+      });
+    $(".ac_content ul li a").click(function () {
+      $(".ac_content").hide();
+    });
+  });
+
+  //====================================================
+  //jancode用 メニュー表示
+  $(function () {
+    $(".jancode_button").prevAll().hide();
+    $(".jancode_button").click(function () {
+      if ($(this).prevAll().is(":hidden")) {
+        $(this).prevAll().slideDown();
+        $(this)
+          .html('<i class="far fa-times-circle"></i>')
+          .addClass("jancode_close");
+      } else {
+        $(this).prevAll().slideUp();
+        $(this)
+          .html('JANコード <i class="fas fa-chevron-circle-down"></i>')
+          .removeClass("jancode_close");
+      }
+    });
+  });
+
+  //====================================================
+  //製品詳細ページの詳細メニュー
+  $(function () {
+    $(".js_tab_select").addClass("select");
+  });
+  //=====================================================
+  // SliderPro
+  // $(function() {
+  //   $('#slider_main_image').sliderPro({
+  //     width: '100%',
+  //     height: '300',
+  //     arrows: true,
+  //     buttons: true,
+  //     fadeArrows: true,
+  //     autoHeight:true,
+  //     fade: true,
+  //     fadeOutPreviousSlide: true,
+  //     fadeDuration: 800,
+  //   });
+  // });
+
+  // $(function() {
+  //   $('#slider_big_box').sliderPro({
+  //     width: 1500,
+  //     height: 540,
+  //     arrows: false,
+  //     buttons: true,
+  //     fadeArrows: true,
+  //     autoHeight:true,
+  //     fade: true,
+  //     fadeOutPreviousSlide: true,
+  //   });
+  // });
+
+  //=====================================================
+  //tool tips
+  $(function () {
+    "use strict";
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  //=====================================================
+  //wow animation
+  $(function () {
+    $(".animated").each(function (i) {
+      var linkBase = $(this).attr("class");
+      $(this).attr("class", linkBase + " animation-" + (i + 1));
+    });
+  });
+
+  //=====================================================
+  //equalize
+  //heigh
+  /*$(function(){
+	$('#equalize').equalize();
+});
+//width
+$(function(){
+	$('#equalize_width').equalize('width');
+});
+*/
+  //
+  /*$(function(){$('a, input[type="button"], input[type="submit"], button, .touch-hover')
+	.on('touchstart', function(){
+		$(this).addClass('hover');
+	}).on('touchend', function(){
+		$(this).removeClass('hover');
+	});
+	});*/
+  //=====================================================
+  //header menu-icon
+  // $(function () {
+  // 	$('#header').prepend('<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>');
+  // 	$("#menu-icon").on("click", function(){
+  // 		$("#header nav").slideToggle();
+  // 		$(this).toggleClass("active");
+  // 	});
+  // });
+  $(function () {
+    $("#header").prepend(
+      '<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>'
+    );
+    $("#menu-icon").on("click", function () {
+      $("#header nav").slideToggle();
+      $(this).toggleClass("active");
+      // $('body').toggleClass("isFixed");
+      $(".navigation").toggleClass("navFixed");
+    });
+  });
+
+  $(window).on("load resize", function () {
+    var winW = $(window).width();
+    var devW = 999;
+    if (winW <= devW) {
+      $("#header nav").removeClass("active");
+      $(".navigation").css("display", "none");
+    } else {
+      $(".navigation").css("display", "block");
+    }
+  });
+
+  // $(function(){
+  // 	var windowWidth = $(window).width();
+  // 	var headerHight = 85;
+  // 	jQuery('a[href^=#]').click(function() {
+  // 		var speed = 1000;
+  // 		var href= jQuery(this).attr("href");
+  // 		var target = jQuery(href == "#" || href == "" ? 'html' : href);
+  // 		var position = target.offset().top-headerHight;
+  // 		jQuery('body,html').animate({scrollTop:position}, speed, 'swing');
+  // 		return false;
+  // 		});
+  // 	});
+
+  //=====================================================
+  //local_nav_list
+  $(function () {
+    $(".local_nav_list li a").each(function () {
+      var $href = $(this).attr("href");
+      if (location.href.match($href)) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+  });
+
+  //=====================================================
+  //set parallax
+  function stellarParallax() {
+    if ($(window).width() > 1024) {
+      $.stellar();
+    } else {
+      $.stellar("destroy");
+      $(".parallax").css("background-position", "");
+    }
+  }
+
+  //=====================================================
+  //tag list set
+  $(function () {
+    $("#tags li").click(function () {
+      var tags = $(this).attr("id");
+      $("#tags li").removeClass("select");
+      $(this).addClass("select");
+      $(".item > div").hide();
+      if (tags == "item_guitar") {
+        $(".item .item_guitar").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_bass") {
+        $(".item .item_bass").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_horizon") {
+        $(".item .item_horizon").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_custom_model") {
+        $(".item .item_custom_model").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_artist_series") {
+        $(".item .item_artist_series").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_esp") {
+        $(".item .item_esp").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_e-2") {
+        $(".item .item_e-2").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_m-2") {
+        $(".item .item_m-2").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_maverick") {
+        $(".item .item_maverick").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_amorous") {
+        $(".item .item_amorous").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_stream") {
+        $(".item .item_stream").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_frx") {
+        $(".item .item_frx").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_forest") {
+        $(".item .item_forest").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_esp-arrow") {
+        $(".item .item_forest").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_ec") {
+        $(".item .item_ec").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_viper") {
+        $(".item .item_viper").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_ultratone") {
+        $(".item .item_ultratone").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_potbelly") {
+        $(".item .item_potbelly").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_throbber") {
+        $(".item .item_throbber").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_m-seven") {
+        $(".item .item_m-seven").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_snnapper") {
+        $(".item .item_snnapper").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_navigator") {
+        $(".item .item_navigator").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_video") {
+        $(".item .item_video").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_abcde") {
+        $(".item .item_abcde").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_fghij") {
+        $(".item .item_fghij").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_klmno") {
+        $(".item .item_klmno").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_pqrst") {
+        $(".item .item_pqrst").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_uvwxyz") {
+        $(".item .item_uvwxyz").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_information") {
+        $(".item .item_information").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else if (tags == "item_productinfo") {
+        $(".item .item_productinfo").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      } else {
+        $(".item .item_all").each(function (e) {
+          $(this)
+            .delay(e++ * 200)
+            .fadeIn(600);
+        });
+      }
+    });
+  });
+
+  //=====================================================
+  //data-scroll
+  $(function () {
+    $("[data-scroll]").on("click", function () {
+      const speed = 300,
+        $self = $(this),
+        $href = $self.attr("href"),
+        $margin = $self.attr("data-scroll")
+          ? parseInt($self.attr("data-scroll"))
+          : 0,
+        $target = $($href);
+      const position =
+        $target[0] && $target !== "#page_top"
+          ? $target.offset().top - $margin
+          : 0;
+      $("html,body").animate({ scrollTop: position }, speed, "swing");
+      $self.blur();
+      return false;
+    }); // end function.onClick
+  }); // end function
+
+  // var headerHeight = $('#header').outerHeight();
+  // var urlHash = location.hash;
+  // if(urlHash) {
+  // 	$('body,html').stop().scrollTop(0);
+  // setTimeout(function(){
+  // 	var target = $(urlHash);
+  // 	var position = target.offset().top - headerHeight;
+  // 	$('body,html').stop().animate({scrollTop:position}, 500);
+  // 	}, 100);
+  // }
+  // $('a[href^="#"]').click(function() {
+  //     var href= $(this).attr("href");
+  //     var target = $(href);
+  //     var position = target.offset().top - headerHeight;
+  //     $('body,html').stop().animate({scrollTop:position}, 500);
+  // });
+  var notList = 'a[href^="#lity"], a:link[rel^="shadowbox"]';
+  $('a[href^="#"]')
+    .not(notList)
+    .click(function () {
+      var href = $(this).attr("href");
+      var target = $(href);
+      var position = target.offset().top - headerHeight;
+      $("body,html").stop().animate({ scrollTop: position }, 500);
+    });
+  //=====================================================
+  //zoom
+  $(function () {
+    var _width = $(window).width();
+    if (_width <= 768) {
+      //SP
+    } else {
+      //PC
+      $(".ex1").zoom();
+      $(".ex3").zoom({ on: "grab" });
+    }
+  });
+  //=====================================================
+  //nav active
+  $(function () {
+    $(".nav_list ul li a").each(function () {
+      const $href = $(this).attr("href");
+      if (location.href.match($href)) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+    $(".item_tab li a").each(function () {
+      const $href = $(this).attr("href");
+      if (location.href.match($href)) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+  });
+
+  //=====================================================
+  //heightline
+  // $(function(){
+  //   $(".heightline .hl_title_box").heightLine();
+  //   $(".heightline .hl_text_box").heightLine();
+  //   $(".heightline .content").heightLine();
+  //   $(".heightline .hl_box").heightLine({
+  //   	minWidth:767
+  //   	});
+  //   });
+
+  //=====================================================
+  // breadcrumb br remove
+  $(function () {
+    $("#breadcrumb br").remove();
+  });
+
+  //=====================================================
+  //js_e2
+  //   $(document).ready(function() {
+  //   $('.js_e2').text('E-Ⅱ');
+  // });
+
+  $(function () {
+    var text = $(".js_E-2").text();
+    text = text.replace("E-2", "E-Ⅱ");
+    $(".js_E-2").text(text);
+  });
+
+  $(function () {
+    // $('.slideUpBox').slideUp('fast');
+    $(".nav_close_btn").click(function () {
+      $(".navigation").slideToggle();
+      //$('#menu-icon').removeClass('active');
+
+      $("#menu-icon").toggleClass("active");
+      $("body").toggleClass("isFixed");
+      $(".navigation").toggleClass("navFixed");
+    });
+  });
+  $(function () {
+    let nav_close_top = $(".nav_close_btn");
+    // ボタン非表示
+    nav_close_top.hide();
+    nav_close_top.click(function () {
+      $("body, html").animate({ scrollTop: 0 }, 500);
+      return false;
+    });
+  });
+
+  $(".drawr_box_items > li.download").hide();
+
+  //ローディング画面
+  $(window).on("load", function () {
+    $("#youtube-area").addClass("appear");
+    $("#loading").addClass("disappear");
+  });
+
+  /*ここまで*/
+})(jQuery);
+
+//youtube API
+var tag = document.createElement("script");
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var ytPlayer;
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player("youtube", {
+    //動画を表示させたいIDを指定
+    videoId: "Kq95zgCrxeY", //動画のアドレスの指定
+    playerVars: {
+      playsinline: 1, // インライン再生を行う
+      autoplay: 1, //自動再生を行う
+      fs: 0, //全画面表示ボタンを表示しない
+      rel: 0, // 再生中の動画と同じチャンネルの関連動画を表示
+      controls: 0, // プレーヤー コントロールを表示しない
+      modestbranding: 1, // YouTubeロゴの非表示
+      iv_load_policy: 3, // アノテーションの非表示
+      start: 50, //50秒後から動画がスタート
+    },
+    events: {
+      //　イベント
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange,
+    },
+  });
+}
+
+//ミュートにしてから再生する設定
+function onPlayerReady(event) {
+  event.target.mute();
+  event.target.playVideo();
+}
+
+//ループ設定
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.ENDED) {
+    event.target.playVideo();
+  }
+}
